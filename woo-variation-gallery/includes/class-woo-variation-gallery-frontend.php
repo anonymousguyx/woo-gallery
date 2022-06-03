@@ -218,7 +218,7 @@ if ( ! class_exists( 'Woo_Variation_Gallery_Frontend' ) ):
 				return false;
 			}
 
-			$single_image_width     = absint( wc_get_theme_support( 'single_image_width', get_option( 'woocommerce_single_image_width', 600 ) ) );
+			$single_image_width = absint( wc_get_theme_support( 'single_image_width', get_option( 'woocommerce_single_image_width', 600 ) ) );
 
 			$gallery_thumbnails_columns = absint( woo_variation_gallery()->get_option( 'thumbnails_columns', 4 ) );
 
@@ -289,8 +289,12 @@ if ( ! class_exists( 'Woo_Variation_Gallery_Frontend' ) ):
 					array_unshift( $gallery_images, get_post_thumbnail_id( $product_id ) );
 				}*/
 				$parent_product          = wc_get_product( $product_id );
-				$parent_product_image_id = $parent_product->get_image_id();
-				$placeholder_image_id    = get_option( 'woocommerce_placeholder_image', 0 );
+				$parent_product_image_id = 0;
+				if ( $parent_product ) {
+					$parent_product_image_id = $parent_product->get_image_id();
+				}
+
+				$placeholder_image_id = get_option( 'woocommerce_placeholder_image', 0 );
 
 				if ( ! empty( $parent_product_image_id ) ) {
 					array_unshift( $gallery_images, $parent_product_image_id );
@@ -520,7 +524,7 @@ if ( ! class_exists( 'Woo_Variation_Gallery_Frontend' ) ):
 				$inner_html = apply_filters( 'woo_variation_gallery_thumbnail_image_inner_html', $inner_html, $image, $template, $attachment_id, $options );
 			}
 
-			return '<div class="' . esc_attr( implode( ' ', array_unique( $classes ) ) ) . '"><div>' . $inner_html . '</div></div>';
+			return '<div class="' . esc_attr( implode( ' ', array_map( 'sanitize_html_class', array_unique( $classes ) ) ) ) . '"><div>' . $inner_html . '</div></div>';
 		}
 
 		public function get_available_variation( $product_id, $variation_id ) {

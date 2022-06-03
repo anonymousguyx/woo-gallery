@@ -97,13 +97,13 @@ $gallery_thumbnail_position_small_device = sanitize_textarea_field( woo_variatio
 ///
 $thumbnail_js_options = array(
 	'slidesToShow'   => $columns,
-	'slidesToScroll' => 1,
+	'slidesToScroll' => $columns,
 	'focusOnSelect'  => true,
 	// 'dots'=>true,
 	'arrows'         => wc_string_to_bool( woo_variation_gallery()->get_option( 'thumbnail_arrow', 'yes', 'woo_variation_gallery_thumbnail_arrow' ) ),
 	'asNavFor'       => '.woo-variation-gallery-slider',
-	'centerMode'     => false,
-	'infinite'       => false,
+	'centerMode'     => true,
+	'infinite'       => true,
 	'centerPadding'  => '0px',
 	'rtl'            => is_rtl(),
 	'prevArrow'      => '<i class="wvg-thumbnail-prev-arrow dashicons dashicons-arrow-left-alt2"></i>',

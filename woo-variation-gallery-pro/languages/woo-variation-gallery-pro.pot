@@ -90,6 +90,6 @@ msgstr ""
 msgid "Please add license key to get automatic updates."
 msgstr ""
 
-#: ../woo-variation-gallery-pro.php:43
+#: ../woo-variation-gallery-pro.php:47
 msgid "Variation Gallery for WooCommerce"
 msgstr ""

@@ -4,13 +4,13 @@
  * Plugin URI: https://getwooplugins.com/plugins/woocommerce-variation-gallery/
  * Description: Additional Variation Images Gallery for WooCommerce - Pro.
  * Author: Emran Ahmed
- * Version: 1.3.1
+ * Version: 1.3.3
  * Domain Path: /languages
  * Requires PHP: 7.0
  * Requires at least: 5.7
- * Tested up to: 5.9
+ * Tested up to: 6.0
  * WC requires at least: 5.8
- * WC tested up to: 6.3
+ * WC tested up to: 6.5
  * Text Domain: woo-variation-gallery-pro
  * Author URI: https://getwooplugins.com/
  */
@@ -19,6 +19,10 @@ defined( 'ABSPATH' ) or die( 'Keep Silent' );
 
 if ( ! defined( 'WOO_VARIATION_GALLERY_PRO_PLUGIN_FILE' ) ) {
 	define( 'WOO_VARIATION_GALLERY_PRO_PLUGIN_FILE', __FILE__ );
+}
+
+if ( ! defined( 'WOO_VARIATION_GALLERY_PRO_PLUGIN_VERSION' ) ) {
+	define( 'WOO_VARIATION_GALLERY_PRO_PLUGIN_VERSION', '1.3.3' );
 }
 
 // Require woocommerce admin message

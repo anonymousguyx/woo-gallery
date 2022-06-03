@@ -5,7 +5,6 @@ defined( 'ABSPATH' ) or die( 'Keep Silent' );
 if ( ! class_exists( 'Woo_Variation_Gallery' ) ):
 	class Woo_Variation_Gallery {
 
-		protected $_version = '1.3.1';
 		protected static $_instance = null;
 
 		public static function instance() {
@@ -41,7 +40,7 @@ if ( ! class_exists( 'Woo_Variation_Gallery' ) ):
 		}
 
 		public function version() {
-			return esc_attr( $this->_version );
+			return esc_attr( WOO_VARIATION_GALLERY_PLUGIN_VERSION );
 		}
 
 		public function get_frontend() {

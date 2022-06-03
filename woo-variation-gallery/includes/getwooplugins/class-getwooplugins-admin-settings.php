@@ -68,9 +68,6 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 		}
   
 		public static function action($current_tab, $current_section, $current_action ) {
-   
-			check_admin_referer( 'getwooplugins-settings' );
-
 			// Trigger actions.
 			do_action( 'getwooplugins_settings_action', $current_tab, $current_section, $current_action );
 		}
@@ -280,9 +277,8 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 				$tooltip_html      = $field_description['tooltip_html'];
                 
                 // Dependent field
-                $require = isset( $value['require'] ) ? "data-gwpdepends='" . wc_esc_json(wp_json_encode( $value['require'] )) . "'" : '';
-                
-                
+                $require = isset( $value['require'] ) ? "data-dependency='" . wc_esc_json(wp_json_encode( $value['require'] )) . "'" : '';
+
                 $classes = array();
                 
                 if( $value['is_pro'] ){

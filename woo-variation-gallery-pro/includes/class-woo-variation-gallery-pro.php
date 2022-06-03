@@ -6,8 +6,6 @@ if ( ! class_exists( 'Woo_Variation_Gallery_Pro', false ) ) :
 
 	class Woo_Variation_Gallery_Pro extends Woo_Variation_Gallery {
 
-		protected $_version = '1.3.1';
-
 		protected static $_instance = null;
 
 		public static function instance() {
@@ -37,7 +35,7 @@ if ( ! class_exists( 'Woo_Variation_Gallery_Pro', false ) ) :
 		}
 
 		public function version() {
-			return esc_attr( $this->_version );
+			return esc_attr( WOO_VARIATION_GALLERY_PRO_PLUGIN_VERSION );
 		}
 
 		public function language() {

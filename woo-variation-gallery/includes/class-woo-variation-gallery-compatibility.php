@@ -29,19 +29,14 @@ if ( ! class_exists( 'Woo_Variation_Gallery_Compatibility' ) ) :
 		protected function hooks() {
 
 			add_action( 'woocommerce_init', array( $this, 'theme_compatibility' ), 20 );
+			add_action( 'woocommerce_init', array( $this, 'oxygen_theme_compatibility' ), 9 );
 			add_action( 'woo_variation_gallery_default_width', array( $this, 'set_default_width_based_on_theme' ), 8 );
 
 			add_action( 'woo_variation_duplicator_variation_save', array( $this, 'duplicator_variation_save' ), 10, 2 );
 			add_action( 'woo_variation_duplicator_image_saved_to', array( $this, 'duplicator_image_saved_to' ), 10, 2 );
-			add_action( 'woo_variation_duplicator_image_saved_from', array(
-				$this,
-				'duplicator_image_saved_from'
-			), 10, 2 );
+			add_action( 'woo_variation_duplicator_image_saved_from', array( $this, 'duplicator_image_saved_from' ), 10, 2 );
 
-			add_filter( 'woo_variation_swatches_get_available_preview_variation', array(
-				$this,
-				'get_available_preview_variation'
-			), 10, 3 );
+			add_filter( 'woo_variation_swatches_get_available_preview_variation', array( $this, 'get_available_preview_variation' ), 10, 3 );
 
 			// Dokan Support
 			add_action( 'wp_enqueue_scripts', array( $this, 'dokan_enqueue_scripts' ) );

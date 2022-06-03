@@ -61,8 +61,13 @@
     
     <?php self::show_messages(); ?>
     <?php do_action( 'getwooplugins_before_settings', $current_tab ); ?>
+    
+    
+    <?php
+        // Don't show form if save button not available
+        if ( $save_button_available ): ?>
     <form method="post" class="getwooplugins-settings-form" id="mainform" action="<?php echo esc_url( $action_url ) ?>" enctype="multipart/form-data">
-
+        <?php endif; ?>
         <!--<nav class="nav-tab-wrapper woo-nav-tab-wrapper getwooplugins-nav-tab-wrapper">
             <?php
             /*                $index = 0;
@@ -87,16 +92,21 @@
                 <div class="getwooplugins-settings-sidebar"><?php do_action( 'getwooplugins_sidebar', $current_tab ); ?></div>
             <?php endif; ?>
         </div>
-        <p class="submit submitbox">
-            <?php if ( $save_button_available ) : ?>
-                <button name="save" class="button-primary woocommerce-save-button" type="submit" value="<?php esc_attr_e( 'Save changes', 'woo-variation-gallery' ); ?>"><?php esc_html_e( 'Save changes', 'woo-variation-gallery' ); ?></button>
-                <a onclick="return confirm('<?php esc_html_e( 'Are you sure to reset?', 'woo-variation-gallery' ) ?>')" class="submitdelete" href="<?php echo esc_url( $reset_url ) ?>"><?php esc_attr_e( 'Reset all', 'woo-variation-gallery' ); ?></a>
-            <?php endif; ?>
-            <?php wp_nonce_field( 'getwooplugins-settings' ); ?>
-        </p>
+        
+        <?php if ( $save_button_available ) : ?>
+            <p class="submit submitbox">
 
-
+                <button name="save" class="button-primary woocommerce-save-button" type="submit" value="<?php esc_attr_e( 'Save changes', 'woocommerce' ); ?>"><?php esc_html_e( 'Save changes', 'woocommerce' ); ?></button>
+                <a onclick="return confirm('<?php esc_html_e( 'Are you sure to reset?', 'woo-variation-gallery' ) ?>')" class="submitdelete" href="<?php echo esc_url( $reset_url ) ?>"><?php esc_attr_e( 'Reset all', 'woocommerce' ); ?></a>
+                
+                <?php wp_nonce_field( 'getwooplugins-settings' ); ?>
+            </p>
+        <?php endif; ?>
+        
+        <?php if ( $save_button_available ): ?>
     </form>
+<?php endif; ?>
+    
     <?php do_action( 'getwooplugins_after_settings', $current_tab ); ?>
 
 </div>

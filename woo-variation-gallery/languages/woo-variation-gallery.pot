@@ -562,7 +562,7 @@ msgstr ""
 msgid "PRO"
 msgstr ""
 
-#: ../includes/getwooplugins/class-getwooplugins-admin-menus.php:152, ../includes/getwooplugins/class-getwooplugins-admin-menus.php:177
+#: ../includes/getwooplugins/class-getwooplugins-admin-menus.php:152, ../includes/getwooplugins/class-getwooplugins-admin-menus.php:181
 msgid "GetWooPlugins Settings"
 msgstr ""
 
@@ -570,7 +570,7 @@ msgstr ""
 msgid "GetWooPlugins"
 msgstr ""
 
-#: ../includes/getwooplugins/class-getwooplugins-admin-menus.php:177
+#: ../includes/getwooplugins/class-getwooplugins-admin-menus.php:181
 msgid "Home"
 msgstr ""
 
@@ -582,7 +582,7 @@ msgstr ""
 msgid "QUICK FEEDBACK"
 msgstr ""
 
-#: ../includes/getwooplugins/html/deactive-feedback-dialog.php:18, ../includes/getwooplugins/html/dialog.php:18
+#: ../includes/getwooplugins/html/deactive-feedback-dialog.php:18, ../includes/getwooplugins/html/dialog.php:19
 msgid "Close modal panel"
 msgstr ""
 
@@ -602,30 +602,22 @@ msgstr ""
 msgid "Skip &amp; Deactivate"
 msgstr ""
 
-#: ../includes/getwooplugins/html/dialog.php:37
+#: ../includes/getwooplugins/html/dialog.php:38
 msgid "See demo"
 msgstr ""
 
-#: ../includes/getwooplugins/html/dialog.php:42
+#: ../includes/getwooplugins/html/dialog.php:43
 msgid "Buy Now"
 msgstr ""
 
-#: ../includes/getwooplugins/html/settings-page.php:92, ../includes/getwooplugins/html/settings-page.php:92
-msgid "Save changes"
-msgstr ""
-
-#: ../includes/getwooplugins/html/settings-page.php:93
+#: ../includes/getwooplugins/html/settings-page.php:100
 msgid "Are you sure to reset?"
 msgstr ""
 
-#: ../includes/getwooplugins/html/settings-page.php:93
-msgid "Reset all"
-msgstr ""
-
-#: ../woo-variation-gallery.php:33
+#: ../woo-variation-gallery.php:37
 msgid "WooCommerce"
 msgstr ""
 
-#: ../woo-variation-gallery.php:41
+#: ../woo-variation-gallery.php:45
 msgid "<strong>Variation Gallery for WooCommerce</strong> is an add-on of "
 msgstr ""
